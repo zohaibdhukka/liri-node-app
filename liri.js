@@ -1,7 +1,8 @@
 require("dotenv").config();
 var axios = require("axios");
+var spotify = require("./keys");
+var Spotify = require("node-spotify-api");
 var spotify = new Spotify(keys.spotify);
-var Spotify = require('node-spotify-api');
 var input = process.argv.splice(2).join(" ");
 
 //MOVIE DATA
@@ -23,7 +24,6 @@ var input = process.argv.splice(2).join(" ");
 //     }
 // )
 
-//SPOTIFY
 spotify.search({ type: 'track', query: input }, function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
