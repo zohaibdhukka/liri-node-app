@@ -1,8 +1,8 @@
 require("dotenv").config();
 var axios = require("axios");
-var spotify = require("./keys");
+var keys = require("./keys");
+var spotify = new Spotify(keys.Spotify);
 var Spotify = require("node-spotify-api");
-var spotify = new Spotify(keys.spotify);
 var input = process.argv.splice(2).join(" ");
 
 //MOVIE DATA
